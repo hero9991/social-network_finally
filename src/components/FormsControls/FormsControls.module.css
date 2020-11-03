@@ -1,0 +1,12 @@
+.span{
+    color: red
+}
+
+.errorText{
+    border: red solid 2px;
+    outline: none;
+}
+
+.text{
+    outline: none;
+}

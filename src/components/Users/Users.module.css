@@ -1,0 +1,27 @@
+.active{
+    color: rgb(216, 97, 97);
+    font-weight: 800;
+}
+
+.img{
+    position: relative;
+    top: -160px
+}
+.link{
+    display: inline-block;
+}
+.user{
+    display: flex;
+    max-width: 250px;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+.unfollow{
+    background-color: rgb(131, 131, 207);
+}
+.follow{
+    background-color: rgb(250, 164, 164);
+}
+.pages{
+    margin-bottom: 20px;
+}

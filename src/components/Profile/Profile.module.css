@@ -1,0 +1,21 @@
+.img{
+    position: relative;
+    top: -160px
+}
+
+.ava{
+    width: 300px;
+}
+
+.profile_form{
+    margin-top: 10px
+}
+.posts{
+    margin-top: 30px
+}
+
+.profile_info{
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
