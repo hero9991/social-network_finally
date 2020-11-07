@@ -1,7 +1,8 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { minLength } from '../utilits/validators/validators'
+import { minLength, required } from '../utilits/validators/validators'
 import { Input } from '../FormsControls/FormsControls'
+import s from './Login.module.css'
 
 const minLength5 = minLength(5)
 
@@ -12,11 +13,14 @@ const LoginForm = (props) => {
         </form>
         : <form onSubmit={props.handleSubmit}>
             <div>
-                <Field component='input' name='login' placeholder='Login' />
+                <Field validate={[required]} component={Input} name='login' placeholder='Login' />
             </div>
             <div>
-                <Field validate={[minLength5]} component={Input} name='password' placeholder='Password' type={'password'}/>
+                <Field validate={[minLength5, required]} component={Input} name='password' placeholder='Password' type={'password'}/>
             </div>
+            { props.error && <div className={s.login_error}>
+                {props.error}
+            </div>}
             <div>
                 <Field component='input' name='rememberMe' type={'checkbox'} />Remember me
             </div>
@@ -30,7 +34,6 @@ const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm)
 
 const Login = (props) => {
     const onSubmit = (data) => {
-        console.log(data)
         props.isAuth ?
             props.logoutThunk()
             : props.loginThunk(data.login, data.password, data.rememberMe)

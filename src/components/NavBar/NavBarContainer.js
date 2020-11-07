@@ -1,10 +1,13 @@
 import React from 'react'
 import NavBar from './NavBar'
+import { connect } from 'react-redux'
 
-const NavBarContainer = () => {
+const NavBarContainer = (props) => {
     return (
-        <NavBar />
+        <NavBar isAuth={props.isAuth}/>
     )
 }
-
-export default NavBarContainer
+const mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth
+})
+export default connect(mapStateToProps)(NavBarContainer)

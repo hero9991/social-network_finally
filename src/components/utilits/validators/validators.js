@@ -5,7 +5,11 @@ export const maxLength = max => value => {
     return undefined
 }
 export const minLength = min => value => {
-    if (value && value.length < min) return 'to ease password'
+    if (value && value.length < min) return 'too ease password'
     return undefined
 }
 
+export const required = value => {
+    if (value) return undefined
+    return 'field is required'
+}

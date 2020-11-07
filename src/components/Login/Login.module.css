@@ -1,0 +1,6 @@
+.login_error{
+    max-width: 206px;
+    border: 2px solid red;
+    color: red;
+    padding: 5px;
+}

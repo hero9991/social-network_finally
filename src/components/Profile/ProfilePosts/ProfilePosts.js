@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { maxLength } from '../../utilits/validators/validators'
+import { maxLength, required } from '../../utilits/validators/validators'
 import { Textarea } from '../../FormsControls/FormsControls'
 import s from '../Profile.module.css'
 
@@ -10,7 +10,7 @@ const maxLength10 = maxLength(10)
 const ProfilePostsForm = (props) => {
     return(
         <form className={s.profile_form} onSubmit={props.handleSubmit}>
-            <Field name='post' component={Textarea} validate={[maxLength10]}/>
+            <Field name='post' component={Textarea} validate={[maxLength10, required]}/>
             <button>Add post</button>
         </form>
     )

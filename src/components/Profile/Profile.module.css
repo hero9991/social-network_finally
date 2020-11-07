@@ -19,3 +19,8 @@
     justify-content: space-between;
     width: 600px;
 }
+
+.status_field{
+    background-color: rgb(255, 228, 228);
+    border: 1px solid black
+}

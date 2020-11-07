@@ -4,9 +4,9 @@ import s from './FormsControls.module.css'
 export const Textarea = ({ input, meta, ...props }) => {
     return (
         <div>
-            <textarea {...props} {...input} {...meta} className={meta.error ? s.errorText : s.text} />
+            <textarea {...props} {...input} {...meta} className={meta.error && meta.touched ? s.errorText : s.text} />
             <div>
-                {meta.error && <span className={s.span}>"{meta.error}"</span>}
+                {meta.touched && meta.error && <span className={s.span}>"{meta.error}"</span>}
             </div>
         </div>
     )
